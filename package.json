@@ -6,7 +6,9 @@
   "scripts": {
     "backend": "nodemon server.js",
     "frontend": "cd frontend && npm start",
-    "build": "cd frontend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "rm -rf dist && mkdir -p dist && cp -r api server.js package.json dist/ && cd dist && npm install --production",
+    "start": "node server.js",
     "install:all": "npm install && cd frontend && npm install"
   },
   "engines": {
